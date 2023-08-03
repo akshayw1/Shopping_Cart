@@ -1,22 +1,22 @@
 <?php
 session_start();
-// Jika tidak bisa login maka balik ke login.php
-// jika masuk ke halaman ini melalui url, maka langsung menuju halaman login
+
+
 if (!isset($_SESSION['login'])) {
     header('location:login.php');
     exit;
 }
 
-// Memanggil atau membutuhkan file function.php
+
 require 'function.php';
 
-// Mengambil data dari nis dengan fungsi get
+
 $nis = $_GET['nis'];
 
-// Mengambil data dari table siswa dari nis yang tidak sama dengan 0
+
 $siswa = query("SELECT * FROM siswa WHERE nis = $nis")[0];
 
-// Jika fungsi ubah lebih dari 0/data terubah, maka munculkan alert dibawah
+
 if (isset($_POST['ubah'])) {
     if (ubah($_POST) > 0) {
         echo "<script>
@@ -24,7 +24,7 @@ if (isset($_POST['ubah'])) {
                 document.location.href = 'index.php';
             </script>";
     } else {
-        // Jika fungsi ubah dibawah dari 0/data tidak terubah, maka munculkan alert dibawah
+        
         echo "<script>
                 alert('Failed!');
             </script>";

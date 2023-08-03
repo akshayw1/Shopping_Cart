@@ -1,16 +1,16 @@
 <?php
 session_start();
-// Jika tidak bisa login maka balik ke login.php
-// jika masuk ke halaman ini melalui url, maka langsung menuju halaman login
+
+
 if (!isset($_SESSION['login'])) {
     header('location:login.php');
     exit;
 }
 
-// Memanggil atau membutuhkan file function.php
+
 require 'function.php';
 
-// Menampilkan semua data dari table siswa berdasarkan nis secara Descending
+
 $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
 
 ?>
@@ -22,17 +22,17 @@ $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-    <!-- Data Tables -->
+    
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
-    <!-- Font Google -->
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <!-- Own CSS -->
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
 
@@ -50,7 +50,7 @@ $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
 </head>
 
 <body>
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase">
         <div class="container">
             <a class="navbar-brand" href="index.php">Shopping Cart</a>
@@ -75,9 +75,9 @@ $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
             </div>
         </div>
     </nav>
-    <!-- Close Navbar -->
+    
 
-    <!-- Container -->
+    
     <div class="container">
         <div class="row my-2">
             <div class="col-md">
@@ -141,9 +141,9 @@ $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
         </div>
     </div>
     </div>
-    <!-- Close Container -->
+    
 
-    <!-- Modal Detail Data -->
+    
     <div class="modal fade" id="detail" tabindex="-1" aria-labelledby="detail" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg">
             <div class="modal-content">
@@ -156,9 +156,9 @@ $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
             </div>
         </div>
     </div>
-    <!-- Close Modal Detail Data -->
+    
 
-    <!-- Footer -->
+    
     <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -259,12 +259,12 @@ $siswa = query("SELECT * FROM siswa ORDER BY nis DESC");
                 </div>
             </div>
         </footer> 
-    <!-- Close Footer -->
+    
 
-    <!-- Bootstrap -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
-    <!-- Data Tables -->
+    
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap5.min.js"></script>
